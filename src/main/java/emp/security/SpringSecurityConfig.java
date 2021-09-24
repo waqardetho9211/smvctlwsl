@@ -17,7 +17,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter implement
     public SpringSecurityConfig() {
         super();
     }
-
+//    In case using locally uncomment it for testing.
 //    @Override
 //    protected void configure(final AuthenticationManagerBuilder auth) throws Exception {
 //        auth
