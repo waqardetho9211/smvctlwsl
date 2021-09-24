@@ -1,4 +1,4 @@
-package emp.web;
+package emp.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;

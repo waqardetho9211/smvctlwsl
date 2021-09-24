@@ -1,4 +1,4 @@
-package emp.security;
+package emp.config.security;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;

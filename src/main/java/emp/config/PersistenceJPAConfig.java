@@ -1,4 +1,4 @@
-package emp.web;
+package emp.config;
 
 import java.util.Properties;
 

@@ -6,10 +6,10 @@ import org.springframework.core.annotation.Order;
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-import emp.security.SpringSecurityConfig;
-import emp.web.EmployeeConfig;
-import emp.web.PersistenceJPAConfig;
-import emp.web.SpringWebConfig;
+import emp.config.SpringWebConfig;
+import emp.config.security.SpringSecurityConfig;
+import emp.config.EmployeeConfig;
+import emp.config.PersistenceJPAConfig;
 
 
 @Order(1) // Filters declared at the Dispatcher initializer should be registered first
