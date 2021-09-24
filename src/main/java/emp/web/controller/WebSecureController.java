@@ -1,15 +1,4 @@
-/* Licensed Materials - Property of IBM                                   */
-/*                                                                        */
-/* SAMPLE                                                                 */
-/*                                                                        */
-/* (c) Copyright IBM Corp. 2020 All Rights Reserved                       */
-/*                                                                        */
-/* US Government Users Restricted Rights - Use, duplication or disclosure */
-/* restricted by GSA ADP Schedule Contract with IBM Corp                  */
-/*                                                                        */
-
-
-package thymeleafexamples.springsecurity.web.controller;
+package emp.web.controller;
 
 import java.util.Date;
 import java.util.Map;
@@ -26,9 +15,9 @@ import com.ibm.cics.server.Task;
 public class WebSecureController 
 {
 	/**
-	 * @param model
-	 * @param auth
-	 * @return home
+	 * @param model mvc model field
+	 * @param auth auth received from server
+	 * @return home home.html page
 	 * @throws InvalidRequestException
 	 */
 	@GetMapping("/")
