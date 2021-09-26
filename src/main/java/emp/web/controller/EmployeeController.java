@@ -1,10 +1,6 @@
 package emp.web.controller;
 
-import java.io.IOException;
 import java.util.List;
-
-import javax.validation.Valid;
-import javax.validation.constraints.NotBlank;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,19 +13,11 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestPart;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.multipart.MultipartFile;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.sun.istack.NotNull;
 
 import emp.web.dto.EmployeeDto;
 import emp.web.dto.input.NewEmpInput;
-import emp.web.entity.Employee;
 import emp.web.service.EmpService;
 
 @Controller
@@ -48,20 +36,6 @@ public class EmployeeController {
         return ResponseEntity.ok(employeeDto);
     }
 
-
-    @RequestMapping(value = "/executesampleservice", method = RequestMethod.POST,
-            consumes = {"multipart/form-data"})
-    @ResponseBody
-    public boolean executeSampleService(
-            @RequestPart("file") @Valid @NotNull @NotBlank MultipartFile file) throws IOException {
-
-        List<Employee> emp = objectMapper.readValue(file.getInputStream(), new TypeReference<List<Employee>>(){});
-
-        JsonNode jsonNode = objectMapper.readTree(file.getInputStream());
-        System.out.println(jsonNode.get("foo").get("bar"));
-        System.out.println("Successful" + file.getSize());
-        return false;
-    }
 
     @GetMapping
     public ResponseEntity<List<EmployeeDto>> getAllEmployees() {
@@ -84,7 +58,7 @@ public class EmployeeController {
     }
 
     private String getPrincipal(){
-        String userName = null;
+        String userName;
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 
         if (principal instanceof UserDetails) {
