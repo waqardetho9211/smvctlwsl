@@ -36,7 +36,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter implement
                     .csrf().disable()
                     .authorizeRequests()
                     // Allow access to URLs required for form login
-                    .antMatchers("/login", "/resources/**", "/j_security_check", "WEB-INF/css/**").permitAll()
+                    .antMatchers("/login", "/resources/**", "/j_security_check", "/css/**", "css/**").permitAll()
                     .anyRequest().authenticated()
                     .and()
                     // Use Java EE pre-authentication and map these roles to Spring Security

@@ -110,7 +110,7 @@
 			<url-pattern>/login</url-pattern>
 			<url-pattern>/logout</url-pattern>
 			<url-pattern>/resources/*</url-pattern>
-			<url-pattern>/css/*</url-pattern>
+			<url-pattern>/css/**</url-pattern>
 		</web-resource-collection>
 	</security-constraint>
 	<security-constraint>
